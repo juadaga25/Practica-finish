@@ -1,8 +1,12 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Menu {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public void Mostrarmenu(Scanner sc) {
+        Metodos m = new Metodos();
+        LinkedList<EstudianteInge> l = new LinkedList<>();
+        LinkedList<EstudianteDise> l1 = new LinkedList<>();
+
         boolean bandera = true;
         int opt = 0;
 
@@ -31,13 +35,14 @@ public class Menu {
                         opt = sc.nextInt();
                         switch (opt) {
                             case 1:
-                                System.out.println("Pagina en mantemiento");
+
+                                l = m.llenarListaIngenieria(l, sc);
                                 break;
                             case 2:
-                                System.out.println("Pagina en mantemiento");
+                                l = m.modificarIngenieria(l, sc);
                                 break;
                             case 3:
-                                System.out.println("Pagina en mantemiento");
+                                l = m.devolverEquipoIngenieria(l, sc);
                                 break;
                             case 4:
                                 System.out.println("Pagina en mantemiento");
@@ -62,13 +67,14 @@ public class Menu {
                         opt = sc.nextInt();
                         switch (opt) {
                             case 1:
-                                System.out.println("Pagina en mantemiento");
+
+                                l1 = m.llenarListaDiseño(l1, sc);
                                 break;
                             case 2:
-                                System.out.println("Pagina en mantemiento");
+                                l1 = m.modificarDiseno(l1, sc);
                                 break;
                             case 3:
-                                System.out.println("Pagina en mantemiento");
+                                l1 = m.devolverEquipoDiseno(l1, sc);
                                 break;
                             case 4:
                                 System.out.println("Pagina en mantemiento");
@@ -81,7 +87,7 @@ public class Menu {
                     }
                     break;
                 case 3:
-
+                    System.out.println("mantenimiento");
                     break;
 
                 default:

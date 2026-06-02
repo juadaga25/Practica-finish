@@ -5,7 +5,7 @@ public class TabletGrafica {
     private float precio;
     private int almacenamiento;
     private float peso;
-    
+
     public TabletGrafica() {
     }
 
@@ -56,9 +56,5 @@ public class TabletGrafica {
     public void setPeso(float peso) {
         this.peso = peso;
     }
-
-    
-
-    
 
 }
