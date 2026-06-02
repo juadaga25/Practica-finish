@@ -213,4 +213,61 @@ public class Metodos {
         return l;
     }
 
+    public void buscarEquipoIngenieria(LinkedList<EstudianteInge> l, Scanner sc){
+
+    System.out.print("Ingrese el serial del equipo: ");
+    String serial = sc.next();
+
+    boolean encontrado = false;
+
+    for (EstudianteInge e : l) {
+
+        if (e.getSerialEquipo().equals(serial)) {
+
+            System.out.println(" EQUIPO ENCONTRADO");
+            System.out.println("Cedula: " + e.getCedula());
+            System.out.println("Nombre: " + e.getNombre());
+            System.out.println("Telefono: " + e.getTelefono());
+            System.out.println("Semestre: " + e.getNumSemestre());
+            System.out.println("Promedio: " + e.getPromAcumulado());
+            System.out.println("Serial Equipo: " + e.getSerialEquipo());
+
+            encontrado = true;
+        }
+    }
+
+    if (encontrado == false) {
+        System.out.println("Equipo no encontrado.");
+    }
+}
+
+public void buscarEquipoDiseno(LinkedList<EstudianteDise> l, Scanner sc){
+
+    System.out.print("Ingrese el serial de la tablet: ");
+    int serial = sc.nextInt();
+
+    boolean encontrado = false;
+
+    for (EstudianteDise e : l) {
+
+        if (e.getSerialD() == serial) {
+
+            System.out.println("TABLET ENCONTRADA ");
+            System.out.println("Cedula: " + e.getCedulaD());
+            System.out.println("Nombre: " + e.getNombreD());
+            System.out.println("Apellido: " + e.getApellidoD());
+            System.out.println("Telefono: " + e.getTelefonoD());
+            System.out.println("Modalidad: " + e.getModaliadEstudio());
+            System.out.println("Asignaturas: " + e.getAsignaturas());
+            System.out.println("Serial Tablet: " + e.getSerialD());
+
+            encontrado = true;
+        }
+    }
+
+    if (encontrado == false) {
+        System.out.println("Tablet no encontrada.");
+    }
+}
+
 }
