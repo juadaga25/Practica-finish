@@ -57,5 +57,4 @@ public class EstudianteInge {
         SerialEquipo = serialEquipo;
     }
 
-    
 }
