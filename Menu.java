@@ -46,6 +46,7 @@ public class Menu {
                                 break;
                             case 4:
                                 System.out.println("Pagina en mantemiento");
+                                m.buscarEquipoDiseno(l1, sc);
                                 break;
 
                             default:
@@ -78,6 +79,7 @@ public class Menu {
                                 break;
                             case 4:
                                 System.out.println("Pagina en mantemiento");
+
                                 break;
 
                             default:
