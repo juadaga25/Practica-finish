@@ -1,6 +1,7 @@
 public class EstudianteInge {
     private String Cedula;
     private String Nombre;
+    private String Apellido;
     private String Telefono;
     private int NumSemestre;
     private float PromAcumulado;
@@ -11,6 +12,14 @@ public class EstudianteInge {
 
     public String getCedula() {
         return Cedula;
+    }
+
+    public String getApellido() {
+        return Apellido;
+    }
+
+    public void setApellido(String apellido) {
+        Apellido = apellido;
     }
 
     public void setCedula(String cedula) {

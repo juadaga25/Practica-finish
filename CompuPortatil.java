@@ -4,12 +4,21 @@ public class CompuPortatil {
     private float Tamaño;
     private float precio;
     private String SitemOP;
+    private String Preocesador;
 
     public CompuPortatil() {
     }
 
     public String getSerial() {
         return Serial;
+    }
+
+    public String getPreocesador() {
+        return Preocesador;
+    }
+
+    public void setPreocesador(String preocesador) {
+        Preocesador = preocesador;
     }
 
     public void setSerial(String serial) {
