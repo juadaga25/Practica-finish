@@ -4,8 +4,10 @@ import java.util.Scanner;
 public class Menu {
     public void Mostrarmenu(Scanner sc) {
         Metodos m = new Metodos();
+        Metodos1 m1 = new Metodos1();
         LinkedList<EstudianteInge> l = new LinkedList<>();
         LinkedList<EstudianteDise> l1 = new LinkedList<>();
+        LinkedList<CompuPortatil> l2 = new LinkedList<>();
 
         boolean bandera = true;
         int opt = 0;
@@ -37,6 +39,7 @@ public class Menu {
                             case 1:
 
                                 l = m.llenarListaIngenieria(l, sc);
+                                l2 = m1.llenarListaPortatil(l2, sc);
                                 break;
                             case 2:
                                 l = m.modificarIngenieria(l, sc);
