@@ -40,7 +40,6 @@ public class Exportar1 {
                 System.out.println("Archivo exportado correctamente ");
 
             } catch (IOException e) {
-                // TODO: handle exception
                 e.printStackTrace();
             }
         }

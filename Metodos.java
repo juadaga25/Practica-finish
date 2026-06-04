@@ -3,9 +3,6 @@ import java.util.Scanner;
 
 public class Metodos {
 
-    // =====================================
-    // REGISTRO INGENIERIA
-    // =====================================
     Validaciones v = new Validaciones();
 
     public LinkedList<EstudianteInge> llenarListaIngenieria(LinkedList<EstudianteInge> l, Scanner sc) {
@@ -52,9 +49,6 @@ public class Metodos {
         return l;
     }
 
-    // =====================================
-    // REGISTRO DISEÑO
-    // =====================================
 
     public LinkedList<EstudianteDise> llenarListaDiseño(LinkedList<EstudianteDise> l, Scanner sc) {
 
@@ -100,9 +94,6 @@ public class Metodos {
         return l;
     }
 
-    // =====================================
-    // MODIFICAR INGENIERIA
-    // =====================================
 
     public LinkedList<EstudianteInge> modificarIngenieria(LinkedList<EstudianteInge> l, Scanner sc) {
 
@@ -136,9 +127,6 @@ public class Metodos {
         return l;
     }
 
-    // =====================================
-    // MODIFICAR DISEÑO
-    // =====================================
 
     public LinkedList<EstudianteDise> modificarDiseno(LinkedList<EstudianteDise> l, Scanner sc) {
 
@@ -175,9 +163,6 @@ public class Metodos {
         return l;
     }
 
-    // =====================================
-    // DEVOLVER EQUIPO INGENIERIA
-    // =====================================
 
     public LinkedList<EstudianteInge> devolverEquipoIngenieria(LinkedList<EstudianteInge> l, Scanner sc) {
 
@@ -201,9 +186,6 @@ public class Metodos {
         return l;
     }
 
-    // =====================================
-    // DEVOLVER EQUIPO DISEÑO
-    // =====================================
 
     public LinkedList<EstudianteDise> devolverEquipoDiseno(LinkedList<EstudianteDise> l, Scanner sc) {
 
@@ -227,9 +209,6 @@ public class Metodos {
         return l;
     }
 
-    // =====================================
-    // REGISTRAR COMPUTADOR PORTATIL
-    // =====================================
 
     public LinkedList<CompuPortatil> llenarListaPortatil(LinkedList<CompuPortatil> l, Scanner sc,
             String serialEstudiante) {
@@ -278,7 +257,6 @@ public class Metodos {
                 System.out.println("Opcion invalida");
         }
 
-        // l.add(cp);
 
         System.out.println("=== PROCESADOR ===");
         System.out.println("1. AMD RYZEN");
@@ -308,9 +286,6 @@ public class Metodos {
         return l;
     }
 
-    // =====================================
-    // REGISTRAR TABLETA
-    // =====================================
 
     public LinkedList<TabletGrafica> llenarListaTablet(LinkedList<TabletGrafica> l, Scanner sc,
             String serialEstudiante) {
@@ -369,10 +344,6 @@ public class Metodos {
         return l;
     }
 
-    // =====================================
-    // BUSCAR EQUIPO INGENIERIA +
-    // MOSTRAR PORTATIL
-    // =====================================
 
     public void buscarEquipoIngenieria(LinkedList<EstudianteInge> lEst, LinkedList<CompuPortatil> lCompu,
             Scanner sc,String serialEstudiante) {
@@ -390,9 +361,7 @@ public class Metodos {
 
                     if (c.getSerial().equals(serial)) {
 
-                        System.out.println("================================");
-                        System.out.println("EQUIPO ENCONTRADO");
-                        System.out.println("================================");
+                        System.out.println("=======EQUIPO ENCONTRADO==");
 
                         System.out.println("Cedula: " + e.getCedula());
                         System.out.println("Nombre: " + e.getNombre());
@@ -422,10 +391,6 @@ public class Metodos {
         }
     }
 
-    // =====================================
-    // BUSCAR EQUIPO DISEÑO +
-    // MOSTRAR TABLET
-    // =====================================
 
     public void buscarEquipoDiseno(LinkedList<EstudianteDise> lEst,LinkedList<TabletGrafica> lTablet,
             Scanner sc,String serialEstudiante) {
@@ -443,9 +408,7 @@ public class Metodos {
 
                     if (t.getSerial().equals(serial)) {
 
-                        System.out.println("================================");
-                        System.out.println("TABLET ENCONTRADA");
-                        System.out.println("================================");
+                        System.out.println("======TABLET ENCONTRADA======");
 
                         System.out.println("Cedula: " + e.getCedulaD());
                         System.out.println("Nombre: " + e.getNombreD());
@@ -483,7 +446,7 @@ public class Metodos {
             for (CompuPortatil c : lCompu) {
                 if (c.getSerial().equals(e.getSerialEquipo())) {
 
-                    System.out.println("EQUIPO ENCONTRADO");
+                    System.out.println("======EQUIPO ENCONTRADO======");
 
                     System.out.println("Cedula: " + e.getCedula());
                     System.out.println("Nombre: " + e.getNombre());
@@ -513,7 +476,7 @@ public class Metodos {
             for (TabletGrafica t : lTablet) {
                 if (t.getSerial().equals(e.getSerialD())) {
 
-                    System.out.println("EQUIPOS ENCONTRADO");
+                    System.out.println("======EQUIPOS ENCONTRADO======");
 
                     System.out.println("Cedula: " + e.getCedulaD());
                     System.out.println("Nombre: " + e.getNombreD());

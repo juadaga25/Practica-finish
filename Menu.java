@@ -8,10 +8,6 @@ public class Menu {
         Metodos m = new Metodos();
         Validaciones v = new Validaciones();
 
-        // =====================================
-        // VECTORES DINAMICOS
-        // =====================================
-
         LinkedList<EstudianteInge> vector_ingenieros = new LinkedList<>();
 
         LinkedList<EstudianteDise> vector_disenadores = new LinkedList<>();
@@ -25,10 +21,6 @@ public class Menu {
 
         while (bandera) {
 
-            // =====================================
-            // MENU PRINCIPAL
-            // =====================================
-
             System.out.println("--------------- BIENVENIDOS AL MENU JUAN DE DIOS ----------------");
             System.out.println("1. Estudiante de Ingenieria");
             System.out.println("2. Estudiante de Diseño");
@@ -40,10 +32,6 @@ public class Menu {
             opt = v.ValidarRango(1, 5, opt, sc);
 
             switch (opt) {
-
-                // =====================================
-                // MENU INGENIERIA
-                // =====================================
 
                 case 1:
 
@@ -114,7 +102,7 @@ public class Menu {
 
                     while (bandera2) {
 
-                        System.out.println("--------------- MENU DISEÑO ----------------");
+                        System.out.println("--------------- MENU DISEÑO -----------------------");
                         System.out.println("1. Registrar Prestamo");
                         System.out.println("2. Modificar Prestamo");
                         System.out.println("3. Devolucion de equipo");
@@ -168,10 +156,6 @@ public class Menu {
 
                     break;
 
-                // =====================================
-                // IMPRIMIR INVENTARIO
-                // =====================================
-
                 case 3:
                     boolean bandera3 = true;
 
@@ -207,11 +191,7 @@ public class Menu {
                     }
 
                     break;
-
-                // =====================================
-                // SALIR
-                // =====================================
-
+                    
                 case 4:
 
                     boolean bandera4 = true;

@@ -14,13 +14,8 @@ public class Exportar {
 
         try (FileWriter e = new FileWriter("EstudiantesInge.txt")) {
 
-            // RECORRER ESTUDIANTES
-
             for (EstudianteInge est : lista) {
 
-                // ================================
-                // DATOS ESTUDIANTE
-                // ================================
 
                 e.write("=========== ESTUDIANTE ===========\n");
 
@@ -30,10 +25,6 @@ public class Exportar {
                 e.write("Numero Semestre: " + est.getNumSemestre() + "\n");
                 e.write("Promedio Acumulado: " + est.getPromAcumulado() + "\n");
                 e.write("Serial Equipo: " + est.getSerialEquipo() + "\n");
-
-                // ================================
-                // BUSCAR COMPUTADOR RELACIONADO
-                // ================================
 
                 for (CompuPortatil pc : lista2) {
 

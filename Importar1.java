@@ -47,7 +47,6 @@ public class Importar1 {
             System.out.println("Archivo importado correcrtamente ");
 
         } catch (Exception e) {
-            // TODO: handle exception
         }
         return lista;
     }
@@ -91,7 +90,7 @@ public class Importar1 {
             System.out.println("Archivo importado correcrtamente ");
 
         } catch (Exception e) {
-            // TODO: handle exception
+
         }
         return lista;
     }

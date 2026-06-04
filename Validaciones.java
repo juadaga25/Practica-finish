@@ -50,7 +50,6 @@ public class Validaciones {
         String cel = sc.next();
         sc.nextLine();
 
-        // Debe empezar por 3 y tener 10 dígitos
         while (!cel.matches("^3[0-9]{9}$")) {
             System.out.println("Número inválido. Debe tener 10 dígitos y empezar por 3:");
             cel = sc.next();
@@ -70,7 +69,7 @@ public class Validaciones {
                 sc.nextLine();
             } else {
                 System.out.println("Error: ingresa un número válido.");
-                sc.next(); // limpiar entrada inválida
+                sc.next(); 
             }
         }
 
@@ -118,11 +117,11 @@ public float validarTamanoPulgadas(Scanner sc) {
 
     while (!sc.hasNextFloat()) {
         System.out.println("Error: ingrese un número válido (puede tener decimales).");
-        sc.next(); // descarta lo inválido
+        sc.next(); 
     }
 
     float tam = sc.nextFloat();
-    sc.nextLine(); // limpiar buffer
+    sc.nextLine(); 
     return tam;
 }
 
@@ -130,11 +129,11 @@ public float validarPrecio(Scanner sc) {
 
     while (!sc.hasNextFloat()) {
         System.out.println("Error: ingrese un precio válido (puede tener decimales).");
-        sc.next(); // descarta lo inválido
+        sc.next(); 
     }
 
     float precio = sc.nextFloat();
-    sc.nextLine(); // limpiar buffer
+    sc.nextLine(); 
     return precio;
 }
 
@@ -142,11 +141,11 @@ public float validarPeso(Scanner sc) {
 
     while (!sc.hasNextFloat()) {
         System.out.println("Error: ingrese un peso válido (puede tener decimales).");
-        sc.next(); // descarta lo inválido
+        sc.next(); 
     }
 
     float peso = sc.nextFloat();
-    sc.nextLine(); // limpiar buffer
+    sc.nextLine(); 
     return peso;
 }
 
