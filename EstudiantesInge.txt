@@ -1,0 +1,36 @@
+=========== ESTUDIANTE ===========
+Cedula: 111111
+Nombre: b
+Telefono: 3222222222
+Numero Semestre: 3
+Promedio Acumulado: 1.4
+Serial Equipo: 1a
+
+=========== COMPUTADOR ===========
+Serial: 1a
+Marca: d
+Tamaño: 12.0
+Precio: 1332.0
+Sistema Operativo: Windows 7
+Procesador: AMD RYZEN
+
+--------------------------------------------
+
+=========== ESTUDIANTE ===========
+Cedula: 222222
+Nombre: d
+Telefono: 3444444444
+Numero Semestre: 4
+Promedio Acumulado: 4.4
+Serial Equipo: 2s
+
+=========== COMPUTADOR ===========
+Serial: 2s
+Marca: d
+Tamaño: 323.0
+Precio: 324.0
+Sistema Operativo: Windows 10
+Procesador: INTEL CORE I5
+
+--------------------------------------------
+

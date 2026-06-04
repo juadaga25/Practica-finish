@@ -6,6 +6,7 @@ public class Metodos {
     // =====================================
     // REGISTRO INGENIERIA
     // =====================================
+    Validaciones v = new Validaciones();
 
     public LinkedList<EstudianteInge> llenarListaIngenieria(LinkedList<EstudianteInge> l, Scanner sc) {
 
@@ -14,7 +15,8 @@ public class Metodos {
         System.out.println(" REGISTRO INGENIERIA ");
 
         System.out.print("Cedula: ");
-        est.setCedula(sc.next());
+        est.setCedula(v.validarCedula(sc));
+        ;
 
         for (EstudianteInge e : l) {
 
@@ -26,19 +28,22 @@ public class Metodos {
         }
 
         System.out.print("Nombre: ");
-        est.setNombre(sc.next());
+        est.setNombre(v.ValidarCaracteres(sc));
 
-        System.out.print("Telefono: ");
-        est.setTelefono(sc.next());
+        System.out.print("Apellido: ");
+        est.setNombre(v.ValidarCaracteres(sc));
+
+        System.out.print("Telefono (Inicia por el # 3): ");
+        est.setTelefono(v.validarCelular(sc));
 
         System.out.print("Numero de semestre: ");
-        est.setNumSemestre(sc.nextInt());
+        est.setNumSemestre(v.ValidarEntero(sc));
 
         System.out.print("Promedio acumulado: ");
-        est.setPromAcumulado(sc.nextFloat());
+        est.setPromAcumulado(v.validarPromedio(sc));
 
         System.out.print("Serial del equipo: ");
-        est.setSerialEquipo(sc.next());
+        est.setSerialEquipo(v.validarSerial(sc));
 
         l.add(est);
 
@@ -58,7 +63,7 @@ public class Metodos {
         System.out.println(" REGISTRO DISEÑO ");
 
         System.out.print("Cedula: ");
-        est.setCedulaD(sc.next());
+        est.setCedulaD(v.validarCedula(sc));
 
         for (EstudianteDise e : l) {
 
@@ -70,22 +75,23 @@ public class Metodos {
         }
 
         System.out.print("Nombre: ");
-        est.setNombreD(sc.next());
+        est.setNombreD(v.ValidarCaracteres(sc));
 
         System.out.print("Apellido: ");
-        est.setApellidoD(sc.next());
+        est.setApellidoD(v.ValidarCaracteres(sc));
 
-        System.out.print("Telefono: ");
-        est.setTelefonoD(sc.next());
+        System.out.print("Telefono (Inicia por el # 3): ");
+        est.setTelefonoD(v.validarCelular(sc));
 
         System.out.print("Modalidad de estudio: ");
-        est.setModaliadEstudio(sc.next());
+        System.out.println("INGRESE POR TECLADO VIRTUAL O PRESENCIAL");
+        est.setModaliadEstudio(v.validarModalidad(sc));
 
         System.out.print("Cantidad de asignaturas: ");
-        est.setAsignaturas(sc.nextInt());
+        est.setAsignaturas(v.ValidarEntero(sc));
 
         System.out.print("Serial de la tablet: ");
-        est.setSerialD(sc.nextInt());
+        est.setSerialD(v.validarSerial(sc));
 
         l.add(est);
 
@@ -101,23 +107,23 @@ public class Metodos {
     public LinkedList<EstudianteInge> modificarIngenieria(LinkedList<EstudianteInge> l, Scanner sc) {
 
         System.out.print("Ingrese cedula del estudiante: ");
-        String cedula = sc.next();
+        String cedula = v.validarCedula(sc);
 
         for (EstudianteInge e : l) {
 
             if (e.getCedula().equals(cedula)) {
 
                 System.out.print("Nuevo nombre: ");
-                e.setNombre(sc.next());
+                e.setNombre(v.ValidarCaracteres(sc));
 
-                System.out.print("Nuevo telefono: ");
-                e.setTelefono(sc.next());
+                System.out.print("Nuevo telefono (Inicia por el # 3): ");
+                e.setTelefono(v.validarCelular(sc));
 
                 System.out.print("Nuevo semestre: ");
-                e.setNumSemestre(sc.nextInt());
+                e.setNumSemestre(v.ValidarEntero(sc));
 
                 System.out.print("Nuevo promedio: ");
-                e.setPromAcumulado(sc.nextFloat());
+                e.setPromAcumulado(v.validarPromedio(sc));
 
                 System.out.println("Datos modificados correctamente.");
 
@@ -137,26 +143,26 @@ public class Metodos {
     public LinkedList<EstudianteDise> modificarDiseno(LinkedList<EstudianteDise> l, Scanner sc) {
 
         System.out.print("Ingrese cedula del estudiante: ");
-        String cedula = sc.next();
+        String cedula = v.validarCedula(sc);
 
         for (EstudianteDise e : l) {
 
             if (e.getCedulaD().equals(cedula)) {
 
                 System.out.print("Nuevo nombre: ");
-                e.setNombreD(sc.next());
+                e.setNombreD(v.ValidarCaracteres(sc));
 
                 System.out.print("Nuevo apellido: ");
-                e.setApellidoD(sc.next());
+                e.setApellidoD(v.ValidarCaracteres(sc));
 
-                System.out.print("Nuevo telefono: ");
-                e.setTelefonoD(sc.next());
+                System.out.print("Nuevo telefono (Inicia por el # 3): ");
+                e.setTelefonoD(v.validarCelular(sc));
 
                 System.out.print("Nueva modalidad: ");
-                e.setModaliadEstudio(sc.next());
+                e.setModaliadEstudio(v.validarModalidad(sc));
 
                 System.out.print("Nuevas asignaturas: ");
-                e.setAsignaturas(sc.nextInt());
+                e.setAsignaturas(v.ValidarEntero(sc));
 
                 System.out.println("Datos modificados correctamente.");
 
@@ -176,7 +182,7 @@ public class Metodos {
     public LinkedList<EstudianteInge> devolverEquipoIngenieria(LinkedList<EstudianteInge> l, Scanner sc) {
 
         System.out.print("Ingrese cedula del estudiante: ");
-        String cedula = sc.next();
+        String cedula = v.validarCedula(sc);
 
         for (EstudianteInge e : l) {
 
@@ -202,7 +208,7 @@ public class Metodos {
     public LinkedList<EstudianteDise> devolverEquipoDiseno(LinkedList<EstudianteDise> l, Scanner sc) {
 
         System.out.print("Ingrese cedula del estudiante: ");
-        String cedula = sc.next();
+        String cedula = v.validarCedula(sc);
 
         for (EstudianteDise e : l) {
 
@@ -225,23 +231,24 @@ public class Metodos {
     // REGISTRAR COMPUTADOR PORTATIL
     // =====================================
 
-    public LinkedList<CompuPortatil> llenarListaPortatil(LinkedList<CompuPortatil> l, Scanner sc) {
+    public LinkedList<CompuPortatil> llenarListaPortatil(LinkedList<CompuPortatil> l, Scanner sc,
+            String serialEstudiante) {
 
         CompuPortatil cp = new CompuPortatil();
 
         System.out.println("=== REGISTRO COMPUTADOR PORTATIL ===");
 
         System.out.print("Serial: ");
-        cp.setSerial(sc.next());
+        cp.setSerial(v.validarSerialCoincidente(sc, serialEstudiante));
 
         System.out.print("Marca: ");
-        cp.setMarca(sc.next());
+        cp.setMarca(v.ValidarCaracteres(sc));
 
         System.out.print("Tamaño en pulgadas: ");
-        cp.setTamaño(sc.nextFloat());
+        cp.setTamaño(v.validarTamanoPulgadas(sc));
 
         System.out.print("Precio: ");
-        cp.setPrecio(sc.nextFloat());
+        cp.setPrecio(v.validarPrecio(sc));
 
         int op;
 
@@ -250,7 +257,8 @@ public class Metodos {
         System.out.println("2. Windows 10");
         System.out.println("3. Windows 11");
 
-        op = sc.nextInt();
+        op = v.ValidarEntero(sc);
+        op = v.ValidarRango(1, 3, op, sc);
 
         switch (op) {
 
@@ -270,14 +278,14 @@ public class Metodos {
                 System.out.println("Opcion invalida");
         }
 
-        //l.add(cp);
+        // l.add(cp);
 
         System.out.println("=== PROCESADOR ===");
         System.out.println("1. AMD RYZEN");
         System.out.println("2. INTEL CORE I5");
-        
 
-        op = sc.nextInt();
+        op = v.ValidarEntero(sc);
+        op = v.ValidarRango(1, 2, op, sc);
 
         switch (op) {
 
@@ -304,23 +312,24 @@ public class Metodos {
     // REGISTRAR TABLETA
     // =====================================
 
-    public LinkedList<TabletGrafica> llenarListaTablet(LinkedList<TabletGrafica> l, Scanner sc) {
+    public LinkedList<TabletGrafica> llenarListaTablet(LinkedList<TabletGrafica> l, Scanner sc,
+            String serialEstudiante) {
 
         TabletGrafica tb = new TabletGrafica();
 
         System.out.println("=== REGISTRO TABLETA GRAFICA ===");
 
         System.out.print("Serial: ");
-        tb.setSerial(sc.next());
+        tb.setSerial(v.validarSerialCoincidente(sc, serialEstudiante));
 
         System.out.print("Marca: ");
-        tb.setMarca(sc.next());
+        tb.setMarca(v.ValidarCaracteres(sc));
 
         System.out.print("Tamaño en pulgadas: ");
-        tb.setTamaño(sc.nextFloat());
+        tb.setTamaño(v.validarTamanoPulgadas(sc));
 
         System.out.print("Precio: ");
-        tb.setPrecio(sc.nextFloat());
+        tb.setPrecio(v.validarPrecio(sc));
 
         int op;
 
@@ -329,7 +338,8 @@ public class Metodos {
         System.out.println("2. 512 GB");
         System.out.println("3. 1 TB");
 
-        op = sc.nextInt();
+        op = v.ValidarEntero(sc);
+        op = v.ValidarRango(1, 3, op, sc);
 
         switch (op) {
 
@@ -350,7 +360,7 @@ public class Metodos {
         }
 
         System.out.print("Peso en kg: ");
-        tb.setPeso(sc.nextFloat());
+        tb.setPeso(v.validarPeso(sc));
 
         l.add(tb);
 
@@ -364,12 +374,11 @@ public class Metodos {
     // MOSTRAR PORTATIL
     // =====================================
 
-    public void buscarEquipoIngenieria(LinkedList<EstudianteInge> lEst,
-            LinkedList<CompuPortatil> lCompu,
-            Scanner sc) {
+    public void buscarEquipoIngenieria(LinkedList<EstudianteInge> lEst, LinkedList<CompuPortatil> lCompu,
+            Scanner sc,String serialEstudiante) {
 
         System.out.print("Ingrese el serial del equipo: ");
-        String serial = sc.next();
+        String serial = v.validarSerialCoincidente(sc, serialEstudiante);
 
         boolean encontrado = false;
 
@@ -418,12 +427,11 @@ public class Metodos {
     // MOSTRAR TABLET
     // =====================================
 
-    public void buscarEquipoDiseno(LinkedList<EstudianteDise> lEst,
-            LinkedList<TabletGrafica> lTablet,
-            Scanner sc) {
+    public void buscarEquipoDiseno(LinkedList<EstudianteDise> lEst,LinkedList<TabletGrafica> lTablet,
+            Scanner sc,String serialEstudiante) {
 
         System.out.print("Ingrese el serial de la tablet: ");
-        String serial = sc.next();
+        String serial = v.validarSerialCoincidente(sc, serialEstudiante);
 
         boolean encontrado = false;
 
@@ -466,6 +474,65 @@ public class Metodos {
         if (encontrado == false) {
             System.out.println("Tablet no encontrada.");
         }
+    }
+
+    public void inventarioTotalinge(LinkedList<EstudianteInge> lEst, LinkedList<CompuPortatil> lCompu) {
+
+        for (EstudianteInge e : lEst) {
+
+            for (CompuPortatil c : lCompu) {
+                if (c.getSerial().equals(e.getSerialEquipo())) {
+
+                    System.out.println("EQUIPO ENCONTRADO");
+
+                    System.out.println("Cedula: " + e.getCedula());
+                    System.out.println("Nombre: " + e.getNombre());
+                    System.out.println("Telefono: " + e.getTelefono());
+                    System.out.println("Semestre: " + e.getNumSemestre());
+                    System.out.println("Promedio: " + e.getPromAcumulado());
+
+                    System.out.println("Serial: " + c.getSerial());
+                    System.out.println("Marca: " + c.getMarca());
+                    System.out.println("Tamaño: " + c.getTamaño());
+                    System.out.println("Precio: " + c.getPrecio());
+                    System.out.println("Sistema Operativo: " + c.getSitemOP());
+                    System.out.println("Preocesador: " + c.getPreocesador());
+
+                }
+            }
+            System.out.println("------------------------------------------------------");
+
+        }
+
+    }
+
+    public void inventarioTotaldiseno(LinkedList<EstudianteDise> lEst, LinkedList<TabletGrafica> lTablet) {
+
+        for (EstudianteDise e : lEst) {
+
+            for (TabletGrafica t : lTablet) {
+                if (t.getSerial().equals(e.getSerialD())) {
+
+                    System.out.println("EQUIPOS ENCONTRADO");
+
+                    System.out.println("Cedula: " + e.getCedulaD());
+                    System.out.println("Nombre: " + e.getNombreD());
+                    System.out.println("Apellido: " + e.getApellidoD());
+                    System.out.println("Modalidad: " + e.getModaliadEstudio());
+                    System.out.println("Asignaturas: " + e.getAsignaturas());
+
+                    System.out.println("Serial: " + t.getSerial());
+                    System.out.println("Marca: " + t.getMarca());
+                    System.out.println("Tamaño: " + t.getTamaño());
+                    System.out.println("Precio: " + t.getPrecio());
+                    System.out.println("Almacenamiento: " + t.getAlmacenamiento());
+                    System.out.println("Peso: " + t.getPeso());
+
+                }
+            }
+
+        }
+
     }
 
 }

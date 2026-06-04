@@ -38,7 +38,7 @@ public class Importar1 {
                     }
                 } else if (linea.startsWith("Correo:")) {
                     if (obj != null) {
-                        obj.setSerialD(Integer.parseInt(linea.substring(8)));
+                        obj.setSerialD((linea.substring(6)));
                         lista.add(obj);
                         obj = null;
                     }

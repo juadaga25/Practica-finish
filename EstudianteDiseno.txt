@@ -1,0 +1,19 @@
+Cedula: 222222
+Nombre: dd
+Apellido: ew
+Telefono: 3555555555
+Modalidad de estudio: VIRTUAL
+Asignaturas: 2
+SerialD: 3d
+------------------------------------------------------ 
+
+=========== TABLET ===========
+Serial: 3d
+Marca: fr
+Tamaño: 34.0
+Precio: 233.0
+Almacenamiento: 512
+Precio: 233.0
+
+--------------------------------------------
+

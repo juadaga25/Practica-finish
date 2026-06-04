@@ -6,6 +6,7 @@ public class Menu {
     public void Mostrarmenu(Scanner sc) {
 
         Metodos m = new Metodos();
+        Validaciones v = new Validaciones();
 
         // =====================================
         // VECTORES DINAMICOS
@@ -31,10 +32,12 @@ public class Menu {
             System.out.println("--------------- BIENVENIDOS AL MENU JUAN DE DIOS ----------------");
             System.out.println("1. Estudiante de Ingenieria");
             System.out.println("2. Estudiante de Diseño");
-            System.out.println("3. Imprimir inventario total");
-            System.out.println("4. Salir del programa");
+            System.out.println("3. Exportar Archivos");
+            System.out.println("4. Imprimir inventario total");
+            System.out.println("5. Salir del programa");
 
-            opt = sc.nextInt();
+            opt = v.ValidarEntero(sc);
+            opt = v.ValidarRango(1, 5, opt, sc);
 
             switch (opt) {
 
@@ -55,15 +58,17 @@ public class Menu {
                         System.out.println("4. Buscar equipo");
                         System.out.println("5. Volver al menu principal");
 
-                        opt = sc.nextInt();
+                        opt = v.ValidarEntero(sc);
+                        opt = v.ValidarRango(1, 5, opt, sc);
 
                         switch (opt) {
 
                             case 1:
-
                                 vector_ingenieros = m.llenarListaIngenieria(vector_ingenieros, sc);
 
-                                vector_portatil = m.llenarListaPortatil(vector_portatil, sc);
+                                String serialEstudiante = vector_ingenieros.getLast().getSerialEquipo();
+
+                                vector_portatil = m.llenarListaPortatil(vector_portatil, sc, serialEstudiante);
 
                                 break;
 
@@ -80,19 +85,20 @@ public class Menu {
                                 break;
 
                             case 4:
-
-                                m.buscarEquipoIngenieria(vector_ingenieros, vector_portatil, sc);
+                                String serialEstudiante1 = vector_ingenieros.getLast().getSerialEquipo();
+                                m.buscarEquipoIngenieria(vector_ingenieros, vector_portatil, sc, serialEstudiante1);;
 
                                 break;
 
                             case 5:
 
                                 bandera1 = false;
+                                System.out.println("-----------HAS VUELTO AL MENU PRINCIPAL----------------\n");
                                 break;
 
                             default:
 
-                                System.out.println("Opcion invalida.");
+                                System.out.println("OPCION INVALIDA INGRESE DE NUEVO.");
                         }
                     }
 
@@ -115,7 +121,8 @@ public class Menu {
                         System.out.println("4. Buscar equipo");
                         System.out.println("5. Volver al menu principal");
 
-                        opt = sc.nextInt();
+                        opt = v.ValidarEntero(sc);
+                        opt = v.ValidarRango(1, 5, opt, sc);
 
                         switch (opt) {
 
@@ -123,7 +130,9 @@ public class Menu {
 
                                 vector_disenadores = m.llenarListaDiseño(vector_disenadores, sc);
 
-                                vector_tableta = m.llenarListaTablet(vector_tableta, sc);
+                                String serialEstudiante = vector_disenadores.getLast().getSerialD();
+
+                                vector_tableta = m.llenarListaTablet(vector_tableta, sc, serialEstudiante);
 
                                 break;
 
@@ -140,19 +149,20 @@ public class Menu {
                                 break;
 
                             case 4:
-
-                                m.buscarEquipoDiseno(vector_disenadores, vector_tableta, sc);
+                                String serialEstudiante2 = vector_disenadores.getLast().getSerialD();
+                                m.buscarEquipoDiseno(vector_disenadores, vector_tableta, sc, serialEstudiante2);;
 
                                 break;
 
                             case 5:
 
                                 bandera2 = false;
+                                System.out.println("-----------HAS VUELTO AL MENU PRINCIPAL----------------\n");
                                 break;
 
                             default:
 
-                                System.out.println("Opcion invalida.");
+                                System.out.println("OPCION INVALIDA INGRESE DE NUEVO.");
                         }
                     }
 
@@ -171,7 +181,8 @@ public class Menu {
                         System.out.println("2. Exportar Diseno");
                         System.out.println("3. Volver al menu");
 
-                        opt = sc.nextInt();
+                        opt = v.ValidarEntero(sc);
+                        opt = v.ValidarRango(1, 3, opt, sc);
 
                         switch (opt) {
                             case 1:
@@ -185,9 +196,11 @@ public class Menu {
 
                             case 3:
                                 bandera3 = false;
+                                System.out.println("-----------HAS VUELTO AL MENU PRINCIPAL----------------\n");
                                 break;
                             default:
-                                System.out.println("opcion invalida");
+
+                                System.out.println("OPCION INVALIDA INGRESE DE NUEVO.");
                                 break;
                         }
 
@@ -201,6 +214,38 @@ public class Menu {
 
                 case 4:
 
+                    boolean bandera4 = true;
+
+                    while (bandera4) {
+                        System.out.println("--------------- INVENTARIO TOTAL ----------------");
+                        System.out.println("1. Inventario total Ingenieria");
+                        System.out.println("2. Inventario total Diseño");
+                        System.out.println("3. Volver al menu");
+
+                        opt = v.ValidarEntero(sc);
+                        opt = v.ValidarRango(1, 3, opt, sc);
+
+                        switch (opt) {
+                            case 1:
+                                m.inventarioTotalinge(vector_ingenieros, vector_portatil);
+                                break;
+                            case 2:
+                                m.inventarioTotaldiseno(vector_disenadores, vector_tableta);
+                                break;
+                            case 3:
+                                bandera4 = false;
+                                break;
+                            default:
+                                System.out.println("opcion invalida");
+                                break;
+                        }
+                    }
+
+
+                    break;
+
+                    case 5:
+
                     System.out.println("GRACIAS POR ESTAR EN JUAN DE DIOS");
                     bandera = false;
 
@@ -208,7 +253,7 @@ public class Menu {
 
                 default:
 
-                    System.out.println("Opcion invalida.");
+                    System.out.println("OPCION INVALIDA INGRESE DE NUEVO.");
             }
         }
     }

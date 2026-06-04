@@ -5,7 +5,7 @@ public class EstudianteDise {
     private String TelefonoD;
     private String ModaliadEstudio;
     private int Asignaturas;
-    private int SerialD;
+    private String SerialD;
     
     public EstudianteDise() {
     }
@@ -58,11 +58,11 @@ public class EstudianteDise {
         Asignaturas = asignaturas;
     }
 
-    public int getSerialD() {
+    public String getSerialD() {
         return SerialD;
     }
 
-    public void setSerialD(int serialD) {
+    public void setSerialD(String serialD) {
         SerialD = serialD;
     }
     
